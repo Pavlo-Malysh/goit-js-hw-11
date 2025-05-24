@@ -10,13 +10,13 @@ const loader = document.querySelector(".loader")
 
 export function createGallery(images) {
 
-  const markup = cardsTemplate(images)
+  const markup = renderCards(images)
   galleryList.innerHTML = markup
   lightbox.refresh()
 
 }
 
-function cardTemplate(obj) {
+function renderCard(obj) {
   const { webformatURL, largeImageURL, tags, likes, views, comments, downloads } = obj
   const alt = tags.split(",").slice(0, 4).join(',')
 
@@ -42,8 +42,8 @@ function cardTemplate(obj) {
       </a></li>`
 }
 
-function cardsTemplate(arr) {
-  return arr.map(cardTemplate).join('\n\n\n')
+function renderCards(arr) {
+  return arr.map(renderCard).join('\n\n\n')
 }
 
 
