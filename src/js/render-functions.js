@@ -7,6 +7,12 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 const galleryList = document.querySelector(".gallery")
 const loader = document.querySelector(".loader")
 
+const lightbox = new SimpleLightbox('.gallery-item .gallery-link', {
+  captions: true,
+  captionsData: 'alt',
+  captionDelay: 250,
+});
+
 
 export function createGallery(images) {
 
@@ -59,12 +65,5 @@ export function showLoader() {
 export function hideLoader() {
   loader.setAttribute('hidden', 'true')
 }
-
-
-const lightbox = new SimpleLightbox('.gallery-item .gallery-link', {
-  captions: true,
-  captionsData: 'alt',
-  captionDelay: 250,
-});
 
 

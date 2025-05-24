@@ -38,7 +38,6 @@ form.addEventListener("submit", (e) => {
     }
 
     createGallery(res);
-    hideLoader();
 
   }).catch((err) => {
     iziToast.error({
